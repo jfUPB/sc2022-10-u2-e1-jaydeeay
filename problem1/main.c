@@ -39,17 +39,6 @@ void printArray(struct array *parr)
 void getArray(struct array *parr)
 {
 
-    char entry [64];
-
-    if(fgets(entry, 2, stdin) !=NULL )
-    {
-        int array [parr->size];
-            for(int i = 0; i<parr->size;i++){
-                fgets(entry, 2,stdin);
-
-                
-            }
-    }
 
 }
 
