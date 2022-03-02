@@ -40,10 +40,11 @@ void getArray(struct array *parr)
 {
     char entry[16];
 
-    if(scanf("%d",&entry))
+    if(fgets(entry, 5, stdin) != NULL)
     {
         entry[strlen(entry) -1 ] = 0;
-        parr->size = entry;
+
+        int cambio = sscanf(entry,"%d",&parr->size);
 
 
         parr->pdata = malloc(sizeof(int)*parr->size);
