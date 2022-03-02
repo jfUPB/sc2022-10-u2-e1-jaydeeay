@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #ifdef DOLOG
 #define LOG(...) fprintf(log, __VA_ARGS__);
 #else
 #define LOG(...)
 #endif
+
 
 struct array
 {
@@ -36,7 +38,17 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+
+    int *pdata;
+    int size;
+
+    if(fgets(size, 2, stdin) !=NULL )
+    {
+            for(int i = 0; i<size;i++){
+                fgets((*pdata+i), 2,stdin);
+            }
+    }
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
