@@ -38,8 +38,27 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
+    char entry[16];
+
+    if(fgets(entry, 5, stdin) != NULL)
+    {
+        entry[strlen(entry) -1 ] = 0;
+        parr->size = entry[0];
+
+        parr->pdata = malloc(sizeof(int)*parr->size);
 
 
+        for(int i = 0;i<parr->size;i++){
+            if(fgets(entry, 2, stdin) != NULL)
+            {
+                entry[strlen(entry) -1 ] = 0;
+
+                *(parr->pdata + i) = entry[i];
+            }
+        }
+    }
+
+    
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
