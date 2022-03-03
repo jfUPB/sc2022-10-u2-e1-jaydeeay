@@ -64,34 +64,32 @@ void getArray(struct array *parr)
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    if(arrOut->size>arrIn1->size)
+    int contador;
+    int size;
+
+    if(arrIn1->size>arrIn2->size)
     {
-        arrOut->size = arrIn1->size;
+        size = arrIn1->size;
     }
-    else if(arrOut->size>arrIn2->size)
+    else if(arrIn2->size>arrIn1->size)
     {
-        arrOut->size = arrIn2->size;
+        size = arrIn2->size;
     }
 
+    int valores[size];
 
     arrOut->pdata = malloc(sizeof(int)*arrOut->size);
 
-    
+
     for(int i=0; i<arrIn1->size;i++){
         for(int j=0; j<arrIn2->size;j++){
             if(arrIn1->pdata[i]==arrIn2->pdata[j]) //Se leen todos elementos del arreglo 1 y se comparan con cada elemento del arrelgo 2, si se encuentra el mismo dato contador++ y se lanza el dato a arreglo3
             {
-                arrOut->pdata[j] = arrIn2->pdata;
-
-
+                contador ++;
+                arrOut->pdata[j] = arrIn2->pdata[j];
             }
         }
-    }
-
-    for (int i = 0; i < arrOut->size; i++)
-    {
-    }
-    
+    }    
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
