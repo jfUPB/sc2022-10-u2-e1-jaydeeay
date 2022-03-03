@@ -82,8 +82,13 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
     
 
     int iguales[size];
+    for (int i = 0; i < size; i++){
+        iguales[i]=-1;
+    }
 
-    int contador;
+    
+
+    int contador=0;
 
     for(int i=0; i<arrIn1->size;i++){
         for(int j=0; j<arrIn2->size;j++){
